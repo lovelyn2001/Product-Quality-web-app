@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Quality Control Dashboard</h2>
+    <form action="/dashboard" method="POST">
+      <label>Production Stage</label>
+      <select name="productionStage" required>
+        <option value="Malting">Malting</option>
+        <option value="Mashing">Mashing</option>
+        <option value="Fermentation">Fermentation</option>
+        <option value="Conditioning">Conditioning</option>
+        <option value="Packaging">Packaging</option>
+      </select>
+      
+      <label>Temperature (°F)</label>
+      <input type="number" name="temperature" step="0.1" required>
+
+      <label>pH Level</label>
+      <input type="number" name="pHLevel" step="0.01" required>
+
+      <label>Yeast Activity</label>
+      <input type="number" name="yeastActivity" step="0.01" required>
+
+      <label>Batch Number</label>
+      <input type="text" name="batchNumber" required>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <% if (alert) { %>
+      <p class="alert"><%= alert %></p>
+    <% } %>
+  </div>
+</body>
+</html>
